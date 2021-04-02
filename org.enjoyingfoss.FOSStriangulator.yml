@@ -15,8 +15,7 @@ modules:
     build-commands:
       - install -D FOSStriangulator /app/bin/FOSStriangulator
       - install -D FOSStriangulator.jar /app/share/FOSStriangulator.jar
-      - install -Dm644 Instructions.png /app/share/Instructions.png
-      - install -Dm644 processing.png /app/share/processing.png
+      - install -Dm644 instructions.png /app/share/instructions.png
       - install -Dm644 icon.png /app/share/icon.png
       - install -Dm644 meta/org.enjoyingfoss.FOSStriangulator.desktop /app/share/applications/org.enjoyingfoss.FOSStriangulator.desktop
       - install -Dm644 meta/org.enjoyingfoss.FOSStriangulator.metainfo.xml /app/share/metainfo/org.enjoyingfoss.FOSStriangulator.metainfo.xml
@@ -24,8 +23,8 @@ modules:
       - install -Dm644 meta/org.enjoyingfoss.FOSStriangulator-symbolic.svg /app/share/icons/hicolor/symbolic/apps/org.enjoyingfoss.FOSStriangulator-symbolic.svg
     sources:
       - type: archive
-        sha256: 14418c620615db211ef256076387af4c57e35a8dc09c98956dd7ae5cec39772a
-        url: https://github.com/FOSStriangulator/FOSStriangulator/releases/download/v1.0.0/FOSStriangulator.tar.xz
+        sha256: 73f8f06af95d971655d994ad22e00ecfb0a277bb91cf52efa4f6256dc74f6a8c
+        url: https://github.com/FOSStriangulator/FOSStriangulator/releases/download/v2.0.0/FOSStriangulator_flatpak.tar.xz
 finish-args:
   - --socket=x11
   - --share=ipc
