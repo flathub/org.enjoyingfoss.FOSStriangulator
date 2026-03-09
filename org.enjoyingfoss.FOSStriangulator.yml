@@ -1,10 +1,15 @@
 app-id: org.enjoyingfoss.FOSStriangulator
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions :
   - org.freedesktop.Sdk.Extension.openjdk11
 command: FOSStriangulator
+finish-args:
+  - --socket=x11
+  - --share=ipc
+  - --device=dri
+  - --filesystem=home
 modules:
   - name: openjdk
     buildsystem: simple
@@ -13,20 +18,17 @@ modules:
   - name: FOSStriangulator
     buildsystem: simple
     build-commands:
-      - install -D FOSStriangulator /app/bin/FOSStriangulator
-      - install -D FOSStriangulator.jar /app/share/FOSStriangulator.jar
-      - install -Dm644 instructions.png /app/share/instructions.png
-      - install -Dm644 icon.png /app/share/icon.png
-      - install -Dm644 meta/org.enjoyingfoss.FOSStriangulator.desktop /app/share/applications/org.enjoyingfoss.FOSStriangulator.desktop
-      - install -Dm644 meta/org.enjoyingfoss.FOSStriangulator.metainfo.xml /app/share/metainfo/org.enjoyingfoss.FOSStriangulator.metainfo.xml
-      - install -Dm644 meta/org.enjoyingfoss.FOSStriangulator.svg  /app/share/icons/hicolor/scalable/apps/org.enjoyingfoss.FOSStriangulator.svg
-      - install -Dm644 meta/org.enjoyingfoss.FOSStriangulator-symbolic.svg /app/share/icons/hicolor/symbolic/apps/org.enjoyingfoss.FOSStriangulator-symbolic.svg
+      - install -D FOSStriangulator -t /app/bin/
+      - install -D FOSStriangulator.jar -t /app/share/
+      - install -Dm644 instructions.png -t /app/share/
+      - install -Dm644 icon.png -t /app/share/
+      - install -Dm644 meta/${FLATPAK_ID}.desktop -t /app/share/applications/
+      - install -Dm644 meta/${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo/
+      - install -Dm644 meta/${FLATPAK_ID}.svg -t /app/share/icons/hicolor/scalable/apps/
+      - install -Dm644 meta/${FLATPAK_ID}-symbolic.svg -t /app/share/icons/hicolor/symbolic/apps/
     sources:
       - type: archive
         sha256: 73f8f06af95d971655d994ad22e00ecfb0a277bb91cf52efa4f6256dc74f6a8c
         url: https://github.com/FOSStriangulator/FOSStriangulator/releases/download/v2.0.0/FOSStriangulator_flatpak.tar.xz
-finish-args:
-  - --socket=x11
-  - --share=ipc
-  - --device=dri
-  - --filesystem=home
+      - type: patch
+        path: fix-appdata.patch
