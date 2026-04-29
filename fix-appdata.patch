@@ -1,0 +1,30 @@
+From 3b2e54bb1483c050f8680502c31160c3dcc0c4e1 Mon Sep 17 00:00:00 2001
+From: Sabri Ünal <yakushabb@gmail.com>
+Date: Mon, 9 Mar 2026 23:57:10 +0300
+Subject: [PATCH] Fix appdata paper cuts
+
+---
+ meta/org.enjoyingfoss.FOSStriangulator.metainfo.xml | 7 ++++++-
+ 1 file changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/meta/org.enjoyingfoss.FOSStriangulator.metainfo.xml b/meta/org.enjoyingfoss.FOSStriangulator.metainfo.xml
+index 6bd0b4c..ff5e6f8 100644
+--- a/meta/org.enjoyingfoss.FOSStriangulator.metainfo.xml
++++ b/meta/org.enjoyingfoss.FOSStriangulator.metainfo.xml
+@@ -9,7 +9,12 @@
+   <metadata_license>CC0-1.0</metadata_license>
+   <project_license>GPL-2.0-only</project_license>
+   <url type="homepage">https://github.com/FOSStriangulator/FOSStriangulator</url>
+-  
++  <url type="bugtracker">https://github.com/FOSStriangulator/FOSStriangulator/issues</url>
++  <url type="vcs-browser">https://github.com/FOSStriangulator/FOSStriangulator</url>
++  <developer id="org.enjoyingfoss">
++    <name>Ilya Floussov</name>
++  </developer>
++
+   <description>
+     <p>
+       A tool for making triangulated illustrations out of photos
+--
+libgit2 1.7.2
+
